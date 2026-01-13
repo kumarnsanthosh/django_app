@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <nav class="bg-white px-6 py-3">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-6">
+            <h1 class="text-xl text-blue-600 font-bold">ShopKart</h1>
+                <div class="relative px-5">
+                    <input
+                    type="text"
+                    placeholder="🔍 Search for products, brands and more"
+                    class="w-[900px] px-8 py-2 bg-blue-50 rounded-lg border-green text-black focus:outline-none"
+                    />
+                </div>
+
+            </div>
+            <div class="flex items-center gap-6 text-white font-medium">
+                    
+                    <button class="flex items-center gap-1 bg-white text-black py-1 rounded-sm">
+                        <img src="/media/products/default_profile_pic.png" alt="" style="height: 20px; width: 20px; " class="w-4 h-4">
+                        <span class="font-medium">Login</span>
+                    </button>
+                    
+                    <button class="flex items-center gap-1 bg-white text-black py-1 rounded-sm">
+                        <img src="/media/products/shopping-cart.png"  style="width: 20px;" alt="">
+                        <a href="#" class="hover:underline text-black">Cart</a>
+                    </button>
+                    <button class="flex items-center gap-1 bg-white text-black py-1 rounded-sm">
+                        <img src="/media/products/store.png" style="width: 20px; " alt="">
+                        <a href="#" class="hover:underline text-black ">Become a seller</a>
+                    </button>
+                                       
+
+                </div>
+
+            </div>
+        </nav>
+    <main class="flex-grow">
+        {% block body %}
+    
+        {% endblock %}
+    </main>    
+    <footer class="w-full bg-gray-800 text-gray-300 py-6">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center gap-6">
+            <p>©2026 ShopKart</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white">About</a>
+                <a href="#" class="hover:text-white">Contact</a>
+                <a href="#" class="hover:text-white">Help</a>
+                </div>
+        </div>
+    </footer>
+</body>
+</html>

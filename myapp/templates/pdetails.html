@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="max-w-5xl mx-auto py-12">
+    <div class="bg-white rounded-lg shadow p-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="flex justify-center">
+            <div class="w-80 h-64 flex items-center justify-center">
+                <img
+                src="{{ pro.image.url }}"
+                alt="{{ pro.name }}"
+                class="max-w-full max-h-full object-contain"
+                >
+              </div>
+        </div>
+        <div>
+            <h1 class="text-2xl font-bold text-gray-900 mb-3">{{ pro.name }}</h1>
+            <p class="text-2xl font-semibold text-green-600 mb-2">${{ pro.price }}</p>
+            <p class="text-yellow-500 font-medium mb-4">⭐ {{ pro.rating }}</p>
+            <p class="text-gray-700 leading-relaxed text-2xl text-lg">{{ pro.des }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
