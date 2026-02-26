@@ -10,7 +10,7 @@ class Group(models.Model):
 
     def __str__(self):
         return self.name
-
+    
     name = models.CharField(max_length=20)
     des = models.TextField()
     image = models.ImageField(upload_to=group_image_path)
@@ -34,3 +34,5 @@ class Product(models.Model):
     category = models.ForeignKey(Group, on_delete=models.CASCADE)
 
 
+class Order(models.Model):
+    pass

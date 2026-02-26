@@ -14,3 +14,9 @@ def products(request, id):
 def pdetails(request, id):
     pro = Product.objects.get(id=id)
     return render(request, 'pdetails.html', {'pro':pro})
+
+
+
+def add_to_cart(request, product_id):
+    product = Product.objects.get(id=product_id)
+    

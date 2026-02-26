@@ -10,7 +10,7 @@
     <nav class="bg-white px-6 py-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center gap-6">
-            <h1 class="text-xl text-blue-600 font-bold">ShopKart</h1>
+            <h1 class="text-xl text-blue-600 font-bold">MiniEcom</h1>
                 <div class="relative px-5">
                     <input
                     type="text"
@@ -21,19 +21,19 @@
 
             </div>
             <div class="flex items-center gap-6 text-white font-medium">
-                    
+                    {{user.username}}
                     <button class="flex items-center gap-1 bg-white text-black py-1 rounded-sm">
                         <img src="/media/products/default_profile_pic.png" alt="" style="height: 20px; width: 20px; " class="w-4 h-4">
-                        <span class="font-medium">Login</span>
+                        <span class="font-medium" href="{% url 'user:login' %}">Login</span>
                     </button>
-                    
+
                     <button class="flex items-center gap-1 bg-white text-black py-1 rounded-sm">
                         <img src="/media/products/shopping-cart.png"  style="width: 20px;" alt="">
                         <a href="#" class="hover:underline text-black">Cart</a>
                     </button>
                     <button class="flex items-center gap-1 bg-white text-black py-1 rounded-sm">
-                        <img src="/media/products/store.png" style="width: 20px; " alt="">
-                        <a href="#" class="hover:underline text-black ">Become a seller</a>
+                        <img src="/media/products/more.png" style="width: 20px; " alt="">
+                        <a href="#" class="hover:underline text-black ">More</a>
                     </button>
                                        
 
@@ -42,13 +42,23 @@
             </div>
         </nav>
     <main class="flex-grow">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
         {% block body %}
     
         {% endblock %}
     </main>    
     <footer class="w-full bg-gray-800 text-gray-300 py-6">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center gap-6">
-            <p>©2026 ShopKart</p>
+            <p>©2026</p>
             <div class="flex gap-6">
                 <a href="#" class="hover:text-white">About</a>
                 <a href="#" class="hover:text-white">Contact</a>
