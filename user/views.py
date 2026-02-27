@@ -11,9 +11,12 @@ def user_login(request):
         user = authenticate(username=username, password=password)
         if user:
             login(request, user)
-            messages.success(request, f'{username} logged in')
+            messages.success(request, f'logged in as {username}')
             return redirect('myapp:home')
         else:
             messages.error(request, 'login failed')
             return redirect('user:login')
     return render(request, 'login.html')
+
+def logout_page():
+    pass

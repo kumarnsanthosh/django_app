@@ -20,13 +20,22 @@
                 </div>
 
             </div>
-            <div class="flex items-center gap-6 text-white font-medium">
-                    {{user.username}}
+            <div class="flex items-center gap-6  font-medium">
+                    {% if user.is_authenticated %}
+                    <a href="">
                     <button class="flex items-center gap-1 bg-white text-black py-1 rounded-sm">
                         <img src="/media/products/default_profile_pic.png" alt="" style="height: 20px; width: 20px; " class="w-4 h-4">
-                        <span class="font-medium" href="{% url 'user:login' %}">Login</span>
+                        <span class="text-bold font-bold">{{user.username}}</span>
                     </button>
-
+                    </a>    
+                    {% else %}
+                    <a href="{% url 'user:login' %}">
+                    <button class="flex items-center gap-1 bg-white text-black py-1 rounded-sm">
+                        <img src="/media/products/default_profile_pic.png" alt="" style="height: 20px; width: 20px; " class="w-4 h-4">
+                        <span class="font-medium">Login</span>
+                    </button>
+                    </a>
+                    {% endif %}
                     <button class="flex items-center gap-1 bg-white text-black py-1 rounded-sm">
                         <img src="/media/products/shopping-cart.png"  style="width: 20px;" alt="">
                         <a href="#" class="hover:underline text-black">Cart</a>
