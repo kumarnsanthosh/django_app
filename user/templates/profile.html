@@ -1,10 +1,8 @@
 <form action="" method="post">
     {% csrf_token %}
-    {% for prof in profile %}
-    <p>{{prof.name}}</p>
-    <p>{{prof.email}}</p>
-    <p>{{prof.phone}}</p>
-    <p>{{prof.address}}</p>
-    {% endfor %}
-    <button type="submit">Save</button>
+    <p>name :{{profile.user}}</p>
+    <p>email :{{profile.email}}</p>
+    <p>phone :{{profile.phone}}</p>
+    <p>address :{{profile.address}}</p>
+    <a href="{% url 'user:editprofile' profile.id %}" type="submit">Edit profile</a>
 </form>
